@@ -1,0 +1,277 @@
+{
+ "31stock": {
+  "title": "Finance Resource Guide",
+  "desc": "Download the Wall Street Alpha Finance Resource Guide PDF: every resource worth using to break into finance.",
+  "pdf": "/__l5e/assets-v1/5eb3fa40-dffb-4867-8839-6a6055e153c4/Finance_Resource_Guide.pdf"
+ },
+ "6excel": {
+  "title": "6 Excel Tools Guide",
+  "desc": "Download the Wall Street Alpha 6 Excel Tools Guide: the spreadsheet tools every analyst uses.",
+  "pdf": "/__l5e/assets-v1/162574c3-ddd2-4027-8073-1009adfe896b/6-excel-tools-guide.pdf"
+ },
+ "6models": {
+  "title": "6 Financial Models Guide",
+  "desc": "Download the Wall Street Alpha 6 Financial Models Guide PDF: the six models every finance hire needs to know.",
+  "pdf": "/__l5e/assets-v1/1ec3c5a7-5bf9-4f6b-8dad-4f9cfb6b9c32/6-financial-models-guide.pdf"
+ },
+ "IB12": {
+  "title": "IB Interview Concepts",
+  "desc": "Download the Wall Street Alpha IB Interview Concepts PDF: the core concepts you need to know for investment banking interviews.",
+  "pdf": "/__l5e/assets-v1/da744b26-9808-4084-ae1b-45ea09be9293/ib-interview-concepts.pdf"
+ },
+ "IB31": {
+  "title": "IB Recruiting Guide",
+  "desc": "Download the Wall Street Alpha IB Recruiting Guide PDF: how investment banking recruiting works and how to win it.",
+  "pdf": "/__l5e/assets-v1/ed1ac1e9-7cbc-4eaa-9b47-d7d0ff8b8fea/IB_Recruiting_Guide.pdf"
+ },
+ "aicerts": {
+  "title": "5 Free AI Finance Certificates",
+  "desc": "Download Wall Street Alpha's guide to five free certificates for breaking into finance in the age of AI.",
+  "pdf": "/__l5e/assets-v1/9ebfc345-1ccb-4a18-a62b-b9eb4d474e97/5-free-ai-finance-certificates.pdf"
+ },
+ "alpha": {
+  "title": "Alpha",
+  "desc": "Download the Wall Street Alpha Alpha PDF: a curated finance resource for landing your next role.",
+  "pdf": "/__l5e/assets-v1/f55bfe6e-85dd-4a64-b3c6-d64545efd2b9/alpha.pdf"
+ },
+ "analystbudget": {
+  "title": "NYC IB Analyst Budget",
+  "desc": "Download the Wall Street Alpha NYC IB Analyst Budget PDF: a detailed budget guide for New York investment banking analysts.",
+  "pdf": "/__l5e/assets-v1/20cc0799-8b68-43b0-a72d-d7c91ef00ab9/WSA_NYC_IB_Analyst_Budget.pdf"
+ },
+ "banks": {
+  "title": "Evercore vs Lazard",
+  "desc": "Download the Wall Street Alpha Evercore vs Lazard PDF: a side-by-side comparison of two leading investment banks for your finance career.",
+  "pdf": "/__l5e/assets-v1/7652f9f2-7906-4d14-bb17-844d12609e20/evercore-vs-lazard.pdf"
+ },
+ "blackstone": {
+  "title": "Blackstone Early Insights Essay",
+  "desc": "Download the Wall Street Alpha Blackstone Early Insights Essay: a real example essay used for the Blackstone Early Insights program application.",
+  "pdf": "/__l5e/assets-v1/000616ca-1e72-4488-89e6-214125c1df03/blackstone-early-insights-essay.pdf"
+ },
+ "certificate": {
+  "title": "Finance Certification",
+  "desc": "View the Wall Street Alpha finance certification PDF.",
+  "pdf": "/__l5e/assets-v1/6bb0ffc9-2ccf-48e4-bf65-9b33ddcf264b/FinanceCertification.pdf"
+ },
+ "coldoutreach": {
+  "title": "Cold Outreach Script",
+  "desc": "Download the Wall Street Alpha Cold Outreach Script: proven templates and scripts for reaching out to finance professionals and building your network.",
+  "pdf": "/__l5e/assets-v1/85af91b6-2fbb-43aa-a05b-6e7389ef7055/Wall_St_Alpha_Cold_Outreach_Script.pdf"
+ },
+ "coworknetwork": {
+  "title": "IB Networking Playbook",
+  "desc": "Download the Wall Street Alpha IB Networking Playbook: how to build real relationships and turn outreach into interviews in investment banking recruiting.",
+  "pdf": "/__l5e/assets-v1/fec28564-23ac-432f-ba47-afa5a7eefa09/IB_Networking_Playbook.pdf"
+ },
+ "crackedvideos": {
+  "title": "Videos to Get Cracked at Finance",
+  "desc": "Watch the videos that get you cracked at finance: Wall Street Alpha's curated video list for landing a role on the street.",
+  "pdf": "/__l5e/assets-v1/0a68654d-84ea-4f7b-b7e8-055157bd197b/Videos_to_Get_Cracked_at_Finance.pdf"
+ },
+ "elitebooks": {
+  "title": "Elite Books",
+  "desc": "Download the Wall Street Alpha reading list: the essential books for breaking into investment banking and markets.",
+  "pdf": "/__l5e/assets-v1/bf1bffbe-bf7c-4623-b7ed-3ca8ace66018/WSA_Reading_List.pdf"
+ },
+ "essay": {
+  "title": "Blackstone Early Insights Essay",
+  "desc": "Download the Wall Street Alpha Blackstone Early Insights Essay: a curated finance recruiting resource.",
+  "pdf": "/__l5e/assets-v1/d071aafd-d3ce-4ef0-a7a7-6df440aced5b/blackstone-early-insights-essay.pdf"
+ },
+ "four": {
+  "title": "Four Messages",
+  "desc": "Download the Wall Street Alpha Four Messages PDF: proven outreach templates for connecting with finance professionals.",
+  "pdf": "/__l5e/assets-v1/6155f8bd-4b8b-4468-9cf2-bda64426955a/four.pdf"
+ },
+ "freelist": {
+  "title": "Free List",
+  "desc": "Download the Wall Street Alpha free list.",
+  "pdf": "/__l5e/assets-v1/8a75d144-f5b9-44cf-8709-5b3c9ec6c946/WSA_Free_List.pdf"
+ },
+ "freshmanperoadmap": {
+  "title": "Freshman to PE Roadmap",
+  "desc": "Download the Wall Street Alpha Freshman to PE Roadmap: a step-by-step guide for freshmen and sophomores targeting private equity internships and full-time offers.",
+  "pdf": "/__l5e/assets-v1/f49e7fd2-28ad-478d-b63e-c81ffff25eb2/Freshman_to_PE_Roadmap.pdf"
+ },
+ "gs": {
+  "title": "Goldman Sachs Interview Preparation",
+  "desc": "Read the Goldman Sachs Interview Preparation guide for interview process details, preparation tips, and frequently asked questions.",
+  "pdf": "/__l5e/assets-v1/6d15d2d7-25a4-4a59-920b-7b849386ad24/virtual-interview-prep.pdf"
+ },
+ "gsvsms": {
+  "title": "GS vs MS",
+  "desc": "Download the Wall Street Alpha GS vs MS PDF: a side-by-side comparison of Goldman Sachs and Morgan Stanley for your finance career.",
+  "pdf": "/__l5e/assets-v1/ee31d700-cd52-4c47-a3dc-3ceae8f44bb0/GS_vs_MS.pdf"
+ },
+ "hourly": {
+  "title": "Hourly Role Breakdown",
+  "desc": "Download the Wall Street Alpha Hourly Role Breakdown: a detailed look at hourly roles, responsibilities, and career paths across finance.",
+  "pdf": "/__l5e/assets-v1/037fc943-1eab-4318-89ee-31147e1b6ee3/hourly-role-breakdown.pdf"
+ },
+ "ibresource31": {
+  "title": "IB Resource Guide",
+  "desc": "Download the Wall Street Alpha IB Resource Guide PDF: the resources, tools, and materials you need to break into investment banking.",
+  "pdf": "/__l5e/assets-v1/e2759624-ddf6-4b7c-9c83-efa30a6ef23d/IB_Resource_Guide.pdf"
+ },
+ "ibvids": {
+  "title": "10 IB Recruiting Videos Guide",
+  "desc": "Download the Wall Street Alpha 10 IB Recruiting Videos Guide: the videos to watch before recruiting starts.",
+  "pdf": "/__l5e/assets-v1/f2d2b0e0-79c2-432e-be24-b33becdaf566/10-ib-recruiting-videos-guide.pdf"
+ },
+ "indicator": {
+  "title": "Market Indicators Guide",
+  "desc": "Download the Wall Street Alpha Market Indicators Guide PDF: the indicators worth watching and how to read them.",
+  "pdf": "/__l5e/assets-v1/be0613c9-fd09-4517-95f3-db80303c7c26/Market_Indicators_Guide.pdf"
+ },
+ "interviewprep": {
+  "title": "Interview Prep Onepager",
+  "desc": "Download the Wall Street Alpha Interview Prep Onepager: a concise, high-yield guide to ace finance, investment banking, private equity, and buy-side interviews.",
+  "pdf": "/__l5e/assets-v1/d3fcfa07-de0e-479c-87f0-b6fdf2cd4932/interview-prep-onepager.pdf"
+ },
+ "job": {
+  "title": "Job",
+  "desc": "Download the Wall Street Alpha Job PDF: a curated finance resource for your career.",
+  "pdf": "/__l5e/assets-v1/afeff781-1d14-4cfd-bd7a-98ffb6456b41/job.pdf"
+ },
+ "jpbooks": {
+  "title": "3 Books IB Recruiting Guide",
+  "desc": "Download the Wall Street Alpha 3 Books IB Recruiting Guide: the three books to read before investment banking recruiting.",
+  "pdf": "/__l5e/assets-v1/9fe7d195-58ac-41fc-8d3e-f05edd02ae5a/3-books-ib-recruiting-guide.pdf"
+ },
+ "learnprivatecredit": {
+  "title": "Learn Private Credit",
+  "desc": "Download the Wall Street Alpha private credit resource to learn the fundamentals, market mechanics, and career paths in private credit.",
+  "pdf": "/__l5e/assets-v1/93fad04a-2448-4a7e-b444-be895fca447d/learn-private-credit.pdf"
+ },
+ "mindset": {
+  "title": "IB Mindset Guide",
+  "desc": "Download the Wall Street Alpha IB Mindset Guide PDF: the mindset that gets you through recruiting and the job.",
+  "pdf": "/__l5e/assets-v1/321d105a-9396-45b1-ab55-4ca6aacfb17e/IB_Mindset_Guide.pdf"
+ },
+ "msbooks": {
+  "title": "Morgan Stanley Recommended Reading",
+  "desc": "Download the Morgan Stanley recommended reading list: the books the desk suggests for students and professionals preparing for markets and investing careers.",
+  "pdf": "/__l5e/assets-v1/cfaccf24-6130-4849-913c-ecc2f447865d/Morgan_Stanley_Recommended_Reading.pdf"
+ },
+ "networking": {
+  "title": "Networking Call Guide",
+  "desc": "Download the Wall Street Alpha Networking Call Guide: a step-by-step framework for running confident, high-yield informational calls with finance professionals.",
+  "pdf": "/__l5e/assets-v1/2ebd42b8-7a6f-4964-a80d-14855836cdcd/wsa-networking-call.pdf"
+ },
+ "networkingcall": {
+  "title": "Networking Call Guide",
+  "desc": "Download the Wall Street Alpha Networking Call Guide: a step-by-step framework for running confident, high-yield informational calls with finance professionals.",
+  "pdf": "/__l5e/assets-v1/aa92c5c8-99f8-4eaf-8f8d-2d367e786ed2/networking-call-guide.pdf"
+ },
+ "offer": {
+  "title": "Freshman Sophomore Summer Playbook",
+  "desc": "Download the Wall Street Alpha Freshman Sophomore Summer Playbook: a step-by-step guide to landing your first finance internship as a freshman or sophomore.",
+  "pdf": "/__l5e/assets-v1/79448575-446a-450e-a059-91efcd6ef159/Wall_St_Alpha_Freshman_Sophomore_Summer_Playbook.pdf"
+ },
+ "outreach": {
+  "title": "Outreach Four Messages",
+  "desc": "Download the Wall Street Alpha Outreach Four Messages PDF: four proven outreach templates for connecting with finance professionals.",
+  "pdf": "/__l5e/assets-v1/0b8c1cf7-55df-4c63-b007-5335b0133cae/outreach-four-messages.pdf"
+ },
+ "payscale": {
+  "title": "Banks by Payscale",
+  "desc": "Download the Wall Street Alpha Banks by Payscale PDF: a curated finance resource for your career.",
+  "pdf": "/__l5e/assets-v1/9009641e-d769-47d9-979c-63be72c3277d/banks-by-payscale.pdf"
+ },
+ "privatecredit": {
+  "title": "Private Credit Recruiting Guide",
+  "desc": "Download the Wall Street Alpha Private Credit Recruiting Guide: target lists, timelines, technical prep, and a step-by-step checklist to land a private credit offer.",
+  "pdf": "/__l5e/assets-v1/17041879-c0e9-48ec-a0c3-ebc7f4576fee/Wall_St_Alpha_Private_Credit_Guide.pdf"
+ },
+ "quant": {
+  "title": "10 Quant Firms Guide",
+  "desc": "Download the Wall Street Alpha 10 Quant Firms Guide PDF: the ten quant firms worth knowing and how they hire.",
+  "pdf": "/__l5e/assets-v1/f86a7fe6-b0c1-4175-81da-8b0ae823a8b2/quant-firms-guide.pdf"
+ },
+ "remotework": {
+  "title": "Finding Remote Finance Internships",
+  "desc": "Download the Wall Street Alpha guide to finding remote finance internships: where to look, how to apply, and how to land the role.",
+  "pdf": "/__l5e/assets-v1/d082349d-d7f5-4725-92fc-8aa3a07f9a41/Finding_Remote_Finance_Internships.pdf"
+ },
+ "resume": {
+  "title": "Resume",
+  "desc": "View the Wall Street Alpha example resume: a finance-ready investment banking resume that gets interviews.",
+  "pdf": "/__l5e/assets-v1/70d67f41-6cd3-4bfc-a15f-fdf9734cc932/Richards_John_Resume.pdf"
+ },
+ "resumetips": {
+  "title": "Resume Tips",
+  "desc": "Download the Wall Street Alpha Resume Tips PDF: expert guidance to make your finance resume stand out.",
+  "pdf": "/__l5e/assets-v1/2b1cef62-956e-4879-b246-48575b098fa6/resume-tips.pdf"
+ },
+ "role": {
+  "title": "Wall Street Role Breakdown",
+  "desc": "Download the Wall Street Alpha Role Breakdown: a detailed look at the roles, responsibilities, and career paths across investment banking, private credit, and buy-side finance.",
+  "pdf": "/__l5e/assets-v1/e73401aa-23b4-4b70-9bd4-1ac3871df431/Wall_St_Alpha_Role_Breakdown.pdf"
+ },
+ "saturdays": {
+  "title": "Saturdays You Will Miss",
+  "desc": "Download the Wall Street Alpha Saturdays You Will Miss PDF.",
+  "pdf": "/__l5e/assets-v1/51be416e-773d-4ae1-9412-d07dcfde0706/saturdays-you-will-miss.pdf"
+ },
+ "scrape": {
+  "title": "Alumni Tracker Setup",
+  "desc": "View the Wall Street Alpha alumni tracker cowork setup guide PDF.",
+  "pdf": "/__l5e/assets-v1/f3f34e35-828b-4cba-a559-20991dee369b/Alumni_Tracker_Cowork_Setup.pdf"
+ },
+ "securitization": {
+  "title": "Securitization Playbook",
+  "desc": "Download the Wall Street Alpha Securitization Playbook: a practical guide to structured finance, securitization, and fixed income careers.",
+  "pdf": "/__l5e/assets-v1/0947c9a6-9aee-497e-a66f-68b9b227e937/securitized-products-playbook.pdf"
+ },
+ "securitized": {
+  "title": "Securitized Products Guide",
+  "desc": "Download the Wall Street Alpha Securitized Products Guide: a recruiting and technical guide for students and professionals targeting structured finance, securitization, and fixed income careers.",
+  "pdf": "/__l5e/assets-v1/0f672e44-15ce-451e-96ad-755b645013b1/Wall_St_Alpha_Securitized.pdf"
+ },
+ "sophomore": {
+  "title": "Sophomore Guide",
+  "desc": "Download the Wall Street Alpha Sophomore Guide: a curated resource to help sophomores land top finance internships and full-time roles.",
+  "pdf": "/__l5e/assets-v1/187b907b-5910-404f-bc86-b467b212d626/sophomore-guide.pdf"
+ },
+ "stieremails": {
+  "title": "S-Tier Cold Email Approaches",
+  "desc": "Download the Wall Street Alpha S-Tier Cold Email Approaches guide: the cold email approaches that actually get replies from bankers.",
+  "pdf": "/__l5e/assets-v1/07606ab6-3b7d-45a8-87a1-794a57f86633/S_Tier_Cold_Email_Approaches.pdf"
+ },
+ "stockfind": {
+  "title": "Finding Undervalued Stocks",
+  "desc": "View the Wall Street Alpha finding undervalued stocks PDF.",
+  "pdf": "/__l5e/assets-v1/2866907c-e927-4bc1-8f6c-96a035aeeb9a/finding-undervalued-stocks.pdf"
+ },
+ "target": {
+  "title": "Target School List",
+  "desc": "Download the Wall Street Alpha Target School List: a curated guide to the universities and programs that top investment banks, private equity, and finance firms recruit from.",
+  "pdf": "/__l5e/assets-v1/7b4c0ac1-92c6-4151-913b-f1a5f9bbe9c7/target-school-list.pdf"
+ },
+ "ten": {
+  "title": "10 Finance Resources Guide",
+  "desc": "Download the Wall Street Alpha 10 Finance Resources Guide PDF: the ten resources worth using to break into finance.",
+  "pdf": "/__l5e/assets-v1/4b2095c2-7c41-4796-ac9a-487f196df401/10_Finance_Resources_Guide.pdf"
+ },
+ "testguide": {
+  "title": "Cognitive Exam Guide",
+  "desc": "Download the Wall Street Alpha Cognitive Exam Guide: prepare for the cognitive and aptitude tests used in finance recruiting.",
+  "pdf": "/__l5e/assets-v1/e3910a85-e07b-4c0c-91c8-4f9ee054ee05/wsa-cognitive-exam-guide.pdf"
+ },
+ "tiers": {
+  "title": "Bank Tiers Analyst Comp",
+  "desc": "Download the Wall Street Alpha Bank Tiers Analyst Comp PDF: a breakdown of analyst compensation across investment banking tiers.",
+  "pdf": "/__l5e/assets-v1/a0d6f849-61c1-41fb-8e50-ae36799c456a/wsa-bank-tiers-analyst-comp.pdf"
+ },
+ "tradingdesks": {
+  "title": "Trading Desk Map",
+  "desc": "Download the Wall Street Alpha Trading Desk Map: a visual breakdown of trading desk structure, roles, and career paths across finance.",
+  "pdf": "/__l5e/assets-v1/86a12d42-df85-48e9-a9d6-109eaf2b64b6/trading-desk-map.pdf"
+ },
+ "triage": {
+  "title": "Book Triage Questions",
+  "desc": "View the Wall Street Alpha book triage questions PDF.",
+  "pdf": "/__l5e/assets-v1/215fb579-b595-44f2-b4e6-b307cef9564f/Book_Triage_Questions.pdf"
+ }
+}
