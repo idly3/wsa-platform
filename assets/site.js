@@ -264,9 +264,10 @@
 
   /* ---------------- resources library ---------------- */
   /* one card markup for the library, the portal Resources tab and "More in" (build.py res_card) */
+  var lockSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
   var resCard = function (r) {
-    var lock = hasAccess(session) ? "" : '<span class="res-lock" title="WSA Academy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Academy</span>';
-    return '<a class="res" href="' + esc(r.slug) + '"><span class="res-thumb"><img src="' + esc(r.thumb) + '" alt="" loading="lazy" width="480" height="621">' + lock + "</span>" +
+    var lock = hasAccess(session) ? "" : '<span class="res-lock" title="WSA Academy">' + lockSvg + "Academy</span>";
+    return '<a class="res" href="https://wallstalpha.com/login"><span class="res-thumb"><img src="' + esc(r.thumb) + '" alt="" loading="lazy" width="480" height="621">' + lock + "</span>" +
       '<div class="res-body"><h3>' + esc(r.title) + "</h3><p>" + esc(r.desc) + '</p><span class="res-meta">' + r.pages + (r.pages === 1 ? " page" : " pages") + " · PDF</span></div></a>";
   };
   window.WSA_resCard = resCard;
@@ -298,6 +299,55 @@
       b.addEventListener("click", function () {
         cat = b.getAttribute("data-cat");
         $$("[data-cat]", root).forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+        render();
+      });
+    });
+    if (q) q.addEventListener("input", render);
+    render();
+  });
+
+  /* ---------------- course library (video courses, listed on the Resources page) ---------------- */
+  $$("[data-courses]").forEach(function (root) {
+    var courses = DATA.courses || [], topics = DATA.course_topics || [];
+    var groups = $("[data-course-groups]", root), q = $("[data-course-search]", root), chips = $("[data-course-chips]", root), stats = $("[data-course-stats]", root);
+    var topic = "All";
+    var num = function (n) { return n.toLocaleString("en-US"); };
+    var dur = function (m) { return Math.floor(m / 60) + "h " + (m % 60) + "m"; };
+    var sum = function (key) { return courses.reduce(function (s, c) { return s + (+c[key] || 0); }, 0); };
+    if (stats) {
+      stats.innerHTML = [[num(courses.length), "Video courses"], [num(Math.round(sum("mins") / 60)), "Hours of video"], [num(sum("lessons")), "Lessons"], [num(sum("exam")), "Course exams"]]
+        .map(function (s) { return '<div class="stat"><span class="label">' + s[1] + "</span><b>" + s[0] + "</b></div>"; }).join("");
+    }
+    if (chips) {
+      chips.innerHTML = ["All"].concat(topics).map(function (t) {
+        return '<button class="chip" type="button" data-ctopic="' + esc(t) + '" aria-pressed="' + (t === "All") + '">' + esc(t) + "</button>";
+      }).join("");
+    }
+    var lock = hasAccess(session) ? "" : '<span class="course-lock" role="img" aria-label="Locked: WSA Academy students only" title="WSA Academy">' + lockSvg + "</span>";
+    var row = function (c) {
+      return '<li class="course">' + lock + '<div class="course-body"><h3>' + esc(c.title) + '</h3><span class="course-meta">' + dur(c.mins) + " · " + c.lessons + " lessons</span></div>" +
+        (c.exam ? '<span class="pill pill--info">Exam</span>' : "") + "</li>";
+    };
+    var group = function (title, rows) {
+      return '<section class="res-group"><div class="res-group-head"><h2>' + esc(title) + "</h2><span>" + rows.length + (rows.length === 1 ? " course" : " courses") + '</span></div><ul class="course-list">' + rows.map(row).join("") + "</ul></section>";
+    };
+    var render = function () {
+      var term = (q && q.value || "").trim().toLowerCase();
+      if (term) {
+        var hits = courses.filter(function (c) { return (topic === "All" || c.topic === topic) && (c.title + " " + c.topic).toLowerCase().indexOf(term) > -1; });
+        groups.innerHTML = hits.length ? group("Results for “" + q.value.trim() + "”", hits)
+          : '<div class="empty-state">No courses match that search. Try a broader word, like "modeling" or "Excel".</div>';
+        return;
+      }
+      groups.innerHTML = topics.filter(function (t) { return topic === "All" || t === topic; }).map(function (t) {
+        var rows = courses.filter(function (c) { return c.topic === t; });
+        return rows.length ? group(t, rows) : "";
+      }).join("");
+    };
+    $$("[data-ctopic]", root).forEach(function (b) {
+      b.addEventListener("click", function () {
+        topic = b.getAttribute("data-ctopic");
+        $$("[data-ctopic]", root).forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
         render();
       });
     });

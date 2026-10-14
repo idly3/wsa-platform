@@ -1,7 +1,1 @@
-# Generated: rebuild with `python3 build.py` (dist/) and the export scripts (handoff/)
-dist/
-handoff/
-__pycache__/
-*.pyc
-node_modules/
 .DS_Store
