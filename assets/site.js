@@ -140,6 +140,7 @@
     ["Indiana", "indiana.png", "J.P. Morgan", "jpmorgan.png", "IB Summer Analyst", "NYC"],
     ["Northwestern", "northwestern.jpg", "Blackstone", "blackstone.jpg", "Private Equity Associate", "NYC"],
     ["Columbia", "columbia.png", "Goldman Sachs", "goldman-sachs.jpg", "IB Summer Analyst", "NYC"],
+    ["Oregon", "oregon.png", "Blackstone", "blackstone.jpg", "Private Equity Summer Analyst", ""],
     ["UNC", "unc.png", "PJT Partners", "pjt.png", "IB Summer Analyst", "NYC"],
     ["Wharton", "wharton.png", "J.P. Morgan", "jpmorgan.png", "IB Summer Analyst", "NYC"],
     ["Oregon", "oregon.png", "Guggenheim", "guggenheim.png", "IB Summer Analyst", ""],
