@@ -1,7 +1,10 @@
-/* 3D bull for the experimental landing page (home-3d.html).
+/* 3D bull for the landing page (index.html) and the webinar application (apply-webinar.html).
    Extrudes the traced logo outline (bull-shape.json, made by .claude/trace_bull.py) into a faint
    watermark behind the hero headline that follows the cursor, touch, scroll and phone tilt.
-   CSS sets its opacity.
+   CSS sets its opacity and its colour (--bull-tone). data-bull3d="stage" leaves out the scroll effect,
+   for a bull that sits in a panel rather than behind a hero.
+   Other scripts make it react with a wsa:bull event: { dir: 1 or -1 } turns it a little,
+   { celebrate: true } spins it a full turn.
    Falls back to the flat logo when WebGL or the CDN isn't available. */
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
@@ -33,6 +36,7 @@ async function init(host) {
 
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var coarse = matchMedia("(pointer: coarse)").matches;
+  var stage = host.getAttribute("data-bull3d") === "stage";
 
   var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, coarse ? 1.5 : 2));
@@ -68,10 +72,9 @@ async function init(host) {
   var key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(3, 4, 6); scene.add(key);
   var rim = new THREE.DirectionalLight(0x9db7ff, 2.2); rim.position.set(-5, 3, -4); scene.add(rim);
 
-  /* one brand tone from the site's colour tokens (navy in light mode, pale blue in dark mode) */
+  /* one brand tone from --bull-tone on the host (the accent by default: navy in light mode, pale blue in dark mode) */
   var applyTheme = function () {
-    var css = getComputedStyle(document.documentElement);
-    var tone = css.getPropertyValue("--accent").trim() || "#12284B";
+    var tone = getComputedStyle(host).getPropertyValue("--bull-tone").trim() || "#12284B";
     bodyMat.color.set(tone);
     hornMat.color.set(tone);
     render();
@@ -105,6 +108,7 @@ async function init(host) {
     wake();
   };
   var readScroll = function () {                     // the hero opens the page: full effect after 60% of it
+    if (stage) return;
     scroll = THREE.MathUtils.clamp(window.scrollY / Math.max(hero.offsetHeight * 0.6, 1), 0, 1);
   };
   window.addEventListener("pointermove", function (e) { aim(e.clientX, e.clientY); }, { passive: true });
@@ -116,6 +120,13 @@ async function init(host) {
     spin.v += (e.clientX < r.left + r.width / 2 ? -1 : 1) * 3;
     aim(e.clientX, e.clientY);
   }, { passive: true });
+  /* nudged by other scripts; a full turn is the same pose, so the spring swings it all the way round */
+  window.addEventListener("wsa:bull", function (e) {
+    if (reduced) return;
+    var d = e.detail || {};
+    if (d.celebrate) spin.x -= Math.PI * 2; else spin.v += (d.dir < 0 ? -1 : 1) * 3;
+    wake();
+  });
   /* phone tilt where it needs no permission prompt (Android); iOS would ask, so it is skipped there */
   if (coarse && window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission !== "function") {
     var held = null;                                 // the angle the phone is normally held at

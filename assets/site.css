@@ -182,7 +182,7 @@ ul,ol{margin:0}
 .hero--bull{position:relative;overflow:hidden;isolation:isolate}
 .hero--bull .hero-grid{grid-template-columns:minmax(0,1fr)}
 .hero--bull .hero-copy{position:relative;z-index:1;max-width:760px}
-.bull3d{position:absolute;z-index:0;top:60%;right:-7%;width:min(58vw,820px);aspect-ratio:1/1;transform:translateY(-50%);--bull-o:.2;opacity:var(--bull-o);pointer-events:none;
+.bull3d{position:absolute;z-index:0;top:60%;right:-7%;width:min(58vw,820px);aspect-ratio:1/1;transform:translateY(-50%);--bull-o:.2;--bull-tone:var(--accent);opacity:var(--bull-o);pointer-events:none;
   -webkit-mask-image:linear-gradient(to bottom,#000 45%,transparent 86%);mask-image:linear-gradient(to bottom,#000 45%,transparent 86%)}
 .bull3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.2s ease}
 .bull3d.is-ready canvas{opacity:1}
@@ -898,4 +898,115 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
   .ticker{overflow-x:auto}
   .track i,.spinner,.live i{animation:none}
   .btn,.btn .arr,.rotator span,.progress i{transition:none}
+}
+
+/* ---------- webinar application (apply-webinar.html, apply-webinar.js) ---------- */
+/* one question at a time on the left, the navy panel with the 3D bull on the right; on phones the bull
+   moves above the form (apply-webinar.js) and the panel follows the form */
+.aw-help{font-size:13.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
+.aw-help span{color:var(--ink);font-weight:600}
+.aw-help:hover span{color:var(--accent)}
+.aw{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+.aw.is-booking{grid-template-columns:minmax(0,2.1fr) minmax(0,.9fr)}
+.aw-main{align-items:flex-start;padding-top:clamp(28px,7vh,80px);padding-bottom:clamp(40px,6vw,72px)}
+.aw-form{width:100%;max-width:640px;display:flex;flex-direction:column;gap:24px;min-width:0}
+.aw.is-booking .aw-form{max-width:920px}
+.aw-top{display:flex;flex-direction:column;gap:10px}
+.aw-resume{font-size:13.5px;color:var(--muted);background:var(--sunk);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.aw-resume .link{font-size:13.5px;text-decoration:underline;text-underline-offset:3px;margin-left:4px}
+.aw-step{display:flex;flex-direction:column;gap:18px;min-width:0}
+.aw-step.is-in{animation:aw-in .4s cubic-bezier(.2,.7,.2,1) both}
+.aw-step.is-back{animation:aw-back .4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes aw-in{from{opacity:0;transform:translateY(18px)}}
+@keyframes aw-back{from{opacity:0;transform:translateY(-18px)}}
+.aw-h1{font-size:clamp(36px,4.8vw,60px);line-height:1.04;letter-spacing:-.025em}
+.aw-q{font-size:clamp(26px,3.1vw,36px);line-height:1.14;outline:none}
+.aw-q:focus-visible,.aw-h1:focus-visible{outline:none}
+.aw-hint{color:var(--muted);font-size:15.5px;margin-top:-8px}
+.aw-welcome .sub{font-size:clamp(16.5px,1.5vw,18.5px)}
+.aw-facts{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.aw-facts li{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--chip);padding:5px 10px;border-radius:999px}
+.aw-go{height:54px;padding-inline:30px;font-size:16px}
+.aw-nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.aw-nav .aw-back{min-width:46px;padding-inline:0;height:46px;font-size:17px}
+.aw-book .aw-nav .aw-back{min-width:0;height:auto;font-size:14px;color:var(--muted)}
+.aw-enter{font-size:12.5px;color:var(--faint)}
+.aw-enter kbd{font-family:var(--mono);font-size:11px;font-weight:500;padding:2px 6px;border:1px solid var(--line-strong);border-radius:5px;background:var(--card);color:var(--muted)}
+@media (pointer:coarse){.aw-enter{display:none}}
+.aw .choice{position:relative;min-height:54px;-webkit-tap-highlight-color:transparent}
+.aw .choice .txt{line-height:1.35}
+.aw .choice:has(input[type="checkbox"]) .key{border-radius:50%}
+.aw-choices--2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.aw-fields{display:flex;flex-direction:column;gap:14px}
+.aw-sub{margin-top:4px}
+.aw-reveal{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--sunk)}
+.aw-reveal.field{padding:0;border:0;background:none}
+.aw .field [aria-invalid="true"]{border-color:var(--bad);box-shadow:0 0 0 3px var(--bad-bg)}
+.aw .choice:has(input[aria-invalid="true"]){border-color:var(--bad)}
+.aw .phone select{padding-inline:10px}
+.aw-hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.aw-ok{color:var(--gain)}
+.aw-book .sub{max-width:62ch}
+.aw-cal{position:relative;height:720px;min-height:560px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);box-shadow:var(--shadow-sm)}
+.aw-cal iframe{display:block;width:100%;height:100%;border:0}
+.aw-cal-wait{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted);font-size:14.5px;text-align:center;padding:24px}
+.aw-cal-alt{margin-top:-8px}
+.aw-booked{gap:18px;scroll-margin-top:96px}
+.aw-booked .steps{margin-top:4px}
+
+/* the side panel and the bull's stage */
+.aw-side{justify-content:flex-start;gap:30px}
+.aw-side h2{font-size:clamp(26px,2.8vw,36px)}
+.aw-side .ticks svg{color:#9FD8B8}
+.aw-side .mini-wins div{align-items:center}
+.aw-side .mini-wins b{white-space:nowrap}
+.aw-quote{margin:0;display:flex;flex-direction:column;gap:10px}
+.aw-quote figcaption{font-size:13px;color:var(--band-muted);padding-left:20px}
+.aw-stage{position:relative;height:clamp(250px,34vh,360px);border-radius:18px;border:1px solid var(--band-line);overflow:hidden;isolation:isolate;flex-shrink:0;
+  background:radial-gradient(90% 80% at 68% 62%,rgba(210,178,107,.18),transparent 62%),linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0))}
+.aw-stage .bull3d{--bull-o:1;--bull-tone:#D2B26B;top:6%;right:0;bottom:0;left:16%;width:auto;aspect-ratio:auto;transform:none;-webkit-mask-image:none;mask-image:none;z-index:1}
+.aw-stage .bull3d-fallback{inset:12% 18%;width:64%;filter:invert(1) sepia(.5) saturate(1.6) hue-rotate(-12deg);opacity:.55}
+.aw-chart{position:absolute;inset:22% 0 0;width:100%;height:78%;z-index:0;overflow:visible}
+.aw-chart path{fill:none;stroke-width:2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.aw-chart-base{stroke:rgba(255,255,255,.09)}
+.aw-chart-line{stroke:#D2B26B;opacity:.75;stroke-dasharray:100;stroke-dashoffset:98;transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)}
+.aw-ticker{position:absolute;left:18px;top:16px;z-index:2;display:flex;flex-direction:column;gap:2px;font-family:var(--mono)}
+.aw-ticker > span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted)}
+.aw-ticker b{font-weight:500;font-size:26px;color:#F4F6F9;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.aw-ticker i{font-style:normal;color:#9FD8B8;font-size:.7em;vertical-align:.12em}
+/* phones: a slim navy strip above the form */
+.aw-stage--compact{height:116px;background-color:var(--band);border-color:transparent;box-shadow:var(--shadow-sm)}
+.aw-stage--compact .bull3d{left:auto;right:-2%;top:4%;width:46%}
+.aw-stage--compact .aw-ticker{top:auto;bottom:16px}
+.aw-stage--compact .aw-chart{inset:30% 0 0}
+
+/* footer + test panel */
+.aw-foot{padding-block:28px 32px}
+.aw-foot .disclaimer{margin-top:0}
+.aw-foot .legal a{color:inherit}
+.aw-test{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;width:min(340px,calc(100vw - 32px));background:var(--ink);color:var(--paper);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.45;box-shadow:var(--shadow)}
+.aw-test b{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.aw-test-row{display:flex;flex-wrap:wrap;gap:6px}
+.aw-test button{height:32px;padding-inline:12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);background:transparent;color:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.aw-test button:hover{background:color-mix(in srgb,var(--paper) 14%,transparent)}
+.aw-test small{opacity:.8;min-height:1em}
+
+@media (max-width:960px){
+  .aw,.aw.is-booking{grid-template-columns:minmax(0,1fr)}
+  .aw-main{padding-top:18px}
+  .aw-form,.aw.is-booking .aw-form{max-width:640px;gap:20px}
+  .aw-side{gap:24px}
+  .aw-cal{height:1000px}
+}
+@media (max-width:700px){
+  .aw-choices--2{grid-template-columns:minmax(0,1fr)}
+  .aw .choice{padding:12px 14px;font-size:15px;min-height:50px}
+  .aw-h1{font-size:clamp(32px,9vw,44px)}
+  .aw-q{font-size:clamp(24px,6.6vw,30px)}
+  .aw-help span{display:none}
+  .aw-reveal{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .aw-step.is-in,.aw-step.is-back{animation:none}
+  .aw-chart-line{transition:none}
 }
