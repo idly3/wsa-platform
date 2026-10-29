@@ -1,4 +1,6 @@
-/* Wall Street Alpha — post-webinar application (apply-webinar.html).
+/* Wall Street Alpha — the application forms: post-webinar (apply-webinar.html) and the main
+   application with the VSL (apply.html). Each page sets its own Zapier webhook, Calendly event and form
+   name on its [data-aw] element (data-webhook, data-calendly, data-form-name), and keeps its own progress.
    Youform-style: one question at a time, letter keys pick an answer, Enter moves on. Answers go to the
    Zapier webhook as a flat form post, with the same fields every time:
      partial   once we have contact details, then again after a pause or when the tab is hidden
@@ -12,21 +14,21 @@
   "use strict";
 
   /* ---------------- settings ---------------- */
-  var WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/28895668/41vnkwy/";
-  var CALENDLY_URL = "https://calendly.com/d/dthy-t7r-368/wsa-interview-webinar";
+  var root = document.querySelector("[data-aw]"), form = document.querySelector("[data-aw-form]");
+  if (!root || !form) return;
+  var WEBHOOK_URL = root.getAttribute("data-webhook");
+  var CALENDLY_URL = root.getAttribute("data-calendly");
+  var FORM_NAME = root.getAttribute("data-form-name") || "application";
   /* Calendly fields that get the phone number: "location" when the event's location is a phone call,
      "a1" to "a10" for the event's invitee questions, in order. Remove any that don't match the event. */
   var CALENDLY_PHONE_FIELDS = ["location", "a1"];
   var PAUSE_MS = 30000;                     // a partial goes out after this long without a new answer
-  var KEY = "wsa_apply_webinar";            // progress in this browser
+  var KEY = "wsa_" + FORM_NAME.replace(/\W+/g, "_");   // progress in this browser, one per form
   var FORGET_AFTER_MS = 14 * 864e5;         // start fresh after two weeks
-  var FORM_NAME = "apply-webinar";
 
   /* ---------------- helpers ---------------- */
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var root = $("[data-aw]"), form = $("[data-aw-form]");
-  if (!root || !form) return;
   var params = new URLSearchParams(window.location.search);
   var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var coarse = window.matchMedia && matchMedia("(pointer: coarse)").matches;
@@ -302,6 +304,7 @@
   }
   function show(id, dir) {
     clearErr();
+    $$("wistia-player", form).forEach(function (v) { if (!stepEl(id).contains(v) && typeof v.pause === "function") { try { v.pause(); } catch (e) {} } });
     state.step = id;
     steps.forEach(function (s) {
       var on = s.getAttribute("data-step") === id;
@@ -470,6 +473,11 @@
     }
   });
 
+  /* a video that can't load (blocked or offline) offers itself in a new tab */
+  if (form.querySelector("wistia-player")) setTimeout(function () {
+    if (!(window.customElements && customElements.get("wistia-player"))) $$("[data-video-alt]", form).forEach(function (el) { el.hidden = false; });
+  }, 6000);
+
   /* ---------------- 3D bull: in the side panel on wide screens, above the form on phones ---------------- */
   (function () {
     var stage = $("[data-aw-stage]"), slot = $("[data-aw-stage-slot]");
@@ -526,7 +534,7 @@
         completed_at: status === "partial" ? "" : new Date(t0 + 120000).toISOString(),
         booked_at: status === "booked" ? new Date(t0 + 150000).toISOString() : "",
         calendly: status === "booked" ? { event: "https://api.calendly.com/scheduled_events/TEST-EVENT", invitee: "https://api.calendly.com/scheduled_events/TEST-EVENT/invitees/TEST-INVITEE" } : null,
-        track: { utm_source: "webinar", utm_medium: "live", utm_campaign: "placement-playbook", utm_content: "end-cta", page_url: window.location.href.split("#")[0], referrer: "" },
+        track: { utm_source: "test", utm_medium: "test", utm_campaign: "test-" + FORM_NAME, utm_content: "test-panel", page_url: window.location.href.split("#")[0], referrer: "" },
         answers: {
           filled_by: "student", stage: "junior", roles: ["ib", "pe"], first_name: "Test", last_name: "Student", email: "test.student@example.com", phone_cc: "US", phone: "555 555 0123",
           timeline: "3m", invest: status === "partial" ? "" : "5k_plus",

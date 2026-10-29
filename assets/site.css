@@ -1196,3 +1196,23 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
   .dock{width:calc(100vw - 32px);justify-content:space-between}
 }
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
+
+/* ---------- main application with the VSL (apply.html) ---------- */
+/* the first screen is the training video, so the form column widens until they start the questions */
+.aw--vsl[data-at="welcome"]{grid-template-columns:minmax(0,2.1fr) minmax(0,.9fr)}
+.aw--vsl[data-at="welcome"] .aw-form{max-width:820px;gap:20px}
+.aw--vsl[data-at="welcome"] .aw-main{padding-top:clamp(24px,5vh,56px)}
+.aw-vsl-h{font-size:clamp(30px,3.9vw,52px);line-height:1.12}
+.aw-vsl-h .rotator{display:inline-grid;vertical-align:bottom}
+.aw-vsl-h .rotator span{grid-area:1/1;opacity:0;transform:translateY(.35em);transition:opacity .45s,transform .45s;white-space:nowrap}
+.aw-vsl-h .rotator span.on{opacity:1;transform:none}
+.aw-vsl{border-radius:16px;overflow:hidden;background:#0A1830;box-shadow:var(--shadow);border:1px solid var(--line)}
+.aw-vsl wistia-player{display:block}
+.aw-vsl-alt{font-size:13.5px;color:var(--muted);margin-top:-8px}
+@media (max-width:960px){
+  .aw--vsl[data-at="welcome"]{grid-template-columns:minmax(0,1fr)}
+  .aw--vsl[data-at="welcome"] .aw-form{max-width:640px}
+  .aw--vsl[data-at="welcome"] .aw-stage--compact{display:none}
+}
+@media (max-width:440px){.aw-vsl-h{font-size:27px}}
+@media (prefers-reduced-motion:reduce){.aw-vsl-h .rotator span{transition:none}}
