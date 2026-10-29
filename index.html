@@ -11,12 +11,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/site.css">
+<script>!function(d){if(window.matchMedia&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("js-motion");setTimeout(function(){if(!window.WSA_MOTION)d.classList.remove("js-motion")},3000)}}(document.documentElement)</script>
 </head>
 <body data-page="home">
 <header class="header">
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="Wall Street Alpha home"><img class="lockup" src="assets/wsa-lockup.png" alt="Wall Street Alpha" width="156" height="48"></a>
-    <nav class="nav" aria-label="Main"><a href="resources.html">Resources</a><a href="jobs.html">Jobs</a><a href="https://wallstalpha.com/webinar123">Free Lecture</a></nav>
+    <nav class="nav" aria-label="Main"><a href="resources.html">Resources</a><a href="jobs.html">Jobs</a><a href="replay.html">Replay</a><a href="https://wallstalpha.com/webinar123">Free Lecture</a></nav>
     <div class="bar-right">
       <a class="link" href="https://wallstalpha.com/login" data-when="out">Log in</a>
       <a class="btn btn--solid btn--sm" href="https://wallstalpha.com/" data-when="out">Apply now</a>
@@ -33,26 +34,33 @@
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Open menu"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
-  <div class="wrap mobile-panel" id="mobile-panel"><a href="resources.html">Resources</a><a href="jobs.html">Jobs</a><a href="https://wallstalpha.com/webinar123">Free Lecture</a><a href="deans-list.html">Dean's List</a></div>
+  <div class="wrap mobile-panel" id="mobile-panel"><a href="resources.html">Resources</a><a href="jobs.html">Jobs</a><a href="replay.html">Webinar replay</a><a href="https://wallstalpha.com/webinar123">Free Lecture</a><a href="deans-list.html">Dean's List</a></div>
 </header>
 <main>
 <section class="hero hero--bull"><div class="bull3d" data-bull3d aria-hidden="true"><img class="bull3d-fallback" src="assets/wsa-bull.png" alt="" width="160" height="160"></div><div class="wrap hero-grid">
   <div class="hero-copy">
-    <span class="label">Investment banking · Sales &amp; trading · Private equity · Private credit</span>
-    <h1>Break into Wall&nbsp;Street on your <span class="mark">first cycle.</span></h1>
-    <div class="ctas"><a class="btn btn--solid" href="https://wallstalpha.com/">Apply now <span class="arr" aria-hidden="true">→</span></a></div>
-    <div class="proof"><strong>240+</strong><span>students placed at Goldman Sachs, Centerview, Moelis, PJT, Blackstone and Ares</span></div>
+    <a class="announce" href="replay.html" data-rise><span class="announce-tag"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Replay</span>Watch Chase's Placement Playbook <span class="arr" aria-hidden="true">→</span></a>
+    <span class="label" data-rise style="--rise-delay:80ms">Investment banking · Sales &amp; trading · Private equity · Private credit</span>
+    <h1 data-split>Break into Wall&nbsp;Street on your <span class="mark">first cycle.</span></h1>
+    <div class="ctas" data-rise style="--rise-delay:650ms"><a class="btn btn--solid" href="https://wallstalpha.com/" data-magnetic>Apply now <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="replay.html"><svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the replay</a></div>
+    <div class="proof" data-rise style="--rise-delay:800ms"><span class="proof-logos" aria-hidden="true"><img class="lg lg--fill" src="assets/logos/wins/goldman-sachs.jpg" alt="" width="34" height="34"><img class="lg" src="assets/logos/wins/centerview.png" alt="" width="34" height="34"><img class="lg" src="assets/logos/wins/moelis.png" alt="" width="34" height="34"><img class="lg" src="assets/logos/wins/pjt.png" alt="" width="34" height="34"><img class="lg lg--dark" src="assets/logos/wins/blackstone.jpg" alt="" width="34" height="34"><img class="lg" src="assets/logos/wins/ares.png" alt="" width="34" height="34"></span><span><strong data-count>240+</strong> students placed at Goldman Sachs, Centerview, Moelis, PJT, Blackstone and Ares</span></div>
   </div>
 </div></section>
 <section class="ticker" aria-label="The Dean's List">
   <div class="wrap ticker-head"><span class="label">The Dean's List</span><a href="deans-list.html">See the full list →</a></div>
   <div class="belt" data-belt></div>
 </section>
+<section class="stats-band" aria-label="Wall Street Alpha in numbers"><div class="wrap stat-row" data-rise-group>
+  <div class="stat-cell"><b data-count>240+</b><span>students placed in high finance</span></div>
+  <div class="stat-cell"><b data-count>12</b><span>coaches who've sat on both sides of the table</span></div>
+  <div class="stat-cell"><b><span data-count>46</span><small>hrs</small></b><span>of training, question banks and models</span></div>
+  <div class="stat-cell"><b data-count>12</b><span>students per cohort, coached 1:1 every week</span></div>
+</div></section>
 <section class="section"><div class="wrap">
-  <div class="section-head"><span class="label">The process</span><h2 class="h2">Three things decide every offer.</h2>
+  <div class="section-head" data-rise-group><span class="label">The process</span><h2 class="h2">Three things decide every offer.</h2>
     <p class="sub">Every tool on the platform is built around one of them, in the order recruiting actually happens.</p></div>
-  <div class="pillars">
-  <article class="pillar">
+  <div class="pillars" data-rise-group>
+  <article class="pillar" data-spot>
     <span class="step">01 · NETWORK</span>
     <h3>Get in front of the people who pass your name along.</h3>
     <p>Alumni lists by school and firm, cold emails that get answered, and a log that tells you who to follow up with this week.</p>
@@ -64,7 +72,7 @@
     </div>
     <a class="textlink" href="resources.html">Get the cold outreach script →</a>
   </article>
-  <article class="pillar">
+  <article class="pillar" data-spot>
     <span class="step">02 · TECHNICALS</span>
     <h3>Answer out loud, under pressure.</h3>
     <p>Technicals across accounting, valuation, DCF, LBO and M&amp;A, with study plans that tell you what to drill tonight.</p>
@@ -76,7 +84,7 @@
     </div>
     <a class="textlink" href="https://wallstalpha.com/technicalguide">Get the free technicals guide →</a>
   </article>
-  <article class="pillar">
+  <article class="pillar" data-spot>
     <span class="step">03 · PRESENTATION</span>
     <h3>Be the person they want to sit next to.</h3>
     <p>Live mock interviews and mock superdays with people who have run real ones, plus line-by-line feedback on your story.</p>
@@ -91,25 +99,41 @@
   </article>
 </div>
 </div></section>
-<section class="section--tight"><div class="wrap"><div class="grid-3">
-  <a class="card card--link" href="https://wallstalpha.com/webinar123"><span class="kicker">FREE LIVE LECTURE · SAT 24 OCT</span><h3>Chase's Placement Playbook, live on Zoom</h3><p>75 minutes on how 240+ students landed $180k+ roles, plus open Q&amp;A. Parents welcome.</p><span class="more">Get a free ticket →</span></a>
-  <a class="card card--link" href="resources.html"><span class="kicker">ACADEMY · RESOURCE LIBRARY</span><h3>Every guide Chase hands his students</h3><p>Cold outreach scripts, the GS vs MS breakdown, analyst budgets, target school lists and 40+ more.</p><span class="more">See what's inside →</span></a>
-  <a class="card card--link" href="jobs.html"><span class="kicker">ACADEMY · JOB BOARD</span><h3>Live Wall Street openings</h3><p>Full-time roles, internships and early-insight programs pulled from firms' career boards every day.</p><span class="more">See the job board →</span></a>
+<section class="section" style="padding-top:0"><div class="wrap replay-grid">
+  <div class="replay-copy" data-rise-group>
+    <span class="label">Webinar replay</span>
+    <h2 class="h2">Missed it live? <em>Watch the replay.</em></h2>
+    <p class="sub">Chase's full Placement Playbook lecture: the system behind 240+ placements, with no target school, finance family or fraternity required.</p>
+    <ul class="ticks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Why cold emails get ignored, and the short one that gets a reply</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Technicals the way banks actually ask them, follow-ups included</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>The airport test that decides who gets the offer</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Jackson's story, from Oregon to Blackstone private equity</span></li></ul>
+    <div class="ctas"><a class="btn btn--solid" href="replay.html"><svg class="play-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Watch the replay</a></div>
+  </div>
+  <a class="replay-card" href="replay.html" data-rise data-spot aria-label="Watch the replay of Chase's Placement Playbook">
+    <img class="ghost" src="assets/wsa-bull.png" alt="">
+    <svg class="chart" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M0 186 L26 178 L50 182 L78 166 L102 171 L130 150 L156 156 L182 132 L208 138 L236 114 L260 120 L288 92 L314 99 L342 70 L368 77 L400 40"/></svg>
+    <span class="replay-top"><span class="rec-tag"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Replay</span><span class="replay-chip">Full lecture + Q&amp;A</span></span>
+    <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></span>
+    <span class="replay-bottom"><span class="replay-title">Chase's Placement Playbook</span><span class="replay-by">With Chase Enloe, CFA, and Jackson, Oregon to Blackstone</span></span>
+  </a>
+</div></section>
+<section class="section--tight" style="padding-top:0"><div class="wrap"><div class="grid-3" data-rise-group>
+  <a class="card card--link" href="https://wallstalpha.com/webinar123" data-spot><span class="kicker">FREE LIVE LECTURE · ON ZOOM</span><h3>Catch the next one live</h3><p>Save a free seat for the next Placement Playbook lecture, with open Q&amp;A. Parents welcome.</p><span class="more">Get a free ticket →</span></a>
+  <a class="card card--link" href="resources.html" data-spot><span class="kicker">ACADEMY · RESOURCE LIBRARY</span><h3>Every guide Chase hands his students</h3><p>Cold outreach scripts, the GS vs MS breakdown, analyst budgets, target school lists and 40+ more.</p><span class="more">See what's inside →</span></a>
+  <a class="card card--link" href="jobs.html" data-spot><span class="kicker">ACADEMY · JOB BOARD</span><h3>Live Wall Street openings</h3><p>Full-time roles, internships and early-insight programs pulled from firms' career boards every day.</p><span class="more">See the job board →</span></a>
 </div></div></section>
 
 <section class="section" style="padding-top:0"><div class="wrap">
-  <div class="section-head"><span class="label">The WSA Academy</span><h2 class="h2">Work with Chase directly.</h2>
+  <div class="section-head" data-rise-group><span class="label">The WSA Academy</span><h2 class="h2">Work with Chase directly.</h2>
     <p class="sub">Apply and get a free 1:1 strategy call. If it's a fit, you get a plan for your cycle, the full library, the job board and the student portal.</p></div>
-  <div class="paths paths--single">
-    <article class="path path--academy"><span class="label">By application</span><h3>The WSA Academy</h3><p class="price">Coached by Chase <small>limited seats per cycle</small></p>
+  <div class="paths paths--single" data-rise>
+    <article class="path path--academy" data-spot><span class="label">By application</span><h3>The WSA Academy</h3><p class="price">Coached by Chase <small>limited seats per cycle</small></p>
       <ul class="ticks"><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A plan for your cycle, built on a 1:1 strategy call</span></li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>The full resource library and the live job board</span></li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Question banks, guided study plans and live technicals prep</span></li><li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Mock interviews and mock superdays before the real ones</span></li></ul>
       <div class="ctas"><a class="btn btn--solid" href="https://wallstalpha.com/">Apply now <span class="arr" aria-hidden="true">→</span></a></div></article>
   </div>
 </div></section>
 <section class="section section--sunk"><div class="wrap coach-grid">
-  <figure class="portrait"><img src="assets/chase-skyline.jpg" alt="Chase Enloe in a dark suit in front of a city skyline" loading="lazy">
+  <figure class="portrait" data-rise><img src="assets/chase-skyline.jpg" alt="Chase Enloe in a dark suit in front of a city skyline" loading="lazy">
     <figcaption><b>Chase Enloe</b>Founder, Wall Street Alpha · CFA</figcaption></figure>
-  <div class="coach-copy">
+  <div class="coach-copy" data-rise-group>
     <span class="label">Your coach</span>
     <h2 class="h2" style="font-size:clamp(28px,3.6vw,42px)">I've been the kid with no connections, and the guy in the room deciding.</h2>
     <p>I grew up far from Wall Street, without a family connection or a target-school pipeline, and had to learn exactly how the door opened. That led to Deutsche Bank, Magnetar, Morgan Stanley, private credit, a Chicago Booth MBA and the CFA charter.</p>
@@ -119,21 +143,21 @@
   </div>
 </div></section>
 <section class="section"><div class="wrap guide">
-  <div class="cover-stage"><div class="cover" role="img" aria-label="Cover of Chase's Placement Playbook: Technicals Guide">
+  <div class="cover-stage" data-rise><div class="cover" data-tilt role="img" aria-label="Cover of Chase's Placement Playbook: Technicals Guide">
   <img class="ghost" src="assets/wsa-bull.png" alt="">
   <span class="kicker">Wall Street Alpha</span>
   <h4>Chase's Placement Playbook <em>Technicals Guide</em></h4>
   <span class="rule"></span>
   <span class="by">By Chase Enloe, CFA</span>
 </div></div>
-  <div class="guide-copy"><span class="label">Free guide</span><h2 class="h2">The technicals guide, free.</h2>
+  <div class="guide-copy" data-rise-group><span class="label">Free guide</span><h2 class="h2">The technicals guide, free.</h2>
     <p class="sub">The questions students were asked at Evercore, PJT, Goldman Sachs and Blackstone, with a four-phase plan to answer them like you've done it before.</p>
     <ul class="contents"><li><span>The exact questions, straight from the interview room</span><span>17 pages</span></li><li><span>The four-phase prep plan</span><span>Plan</span></li><li><span>The 20 essentials: accounting, valuation, LBO</span><span>Concepts</span></li><li><span>Turning a correct answer into a conversation</span><span>Delivery</span></li></ul>
     <div class="ctas"><a class="btn btn--solid" href="https://wallstalpha.com/technicalguide">Get the free guide <span class="arr" aria-hidden="true">→</span></a></div></div>
 </div></section>
-<section class="band closing"><div class="wrap closing-inner">
-  <div><h2>One shot per cycle. <em>Make it count.</em></h2><p>Apply to the Academy for the full library, the job board and coaching with Chase, or start with the free live lecture.</p></div>
-  <div class="ctas"><a class="btn btn--solid" href="https://wallstalpha.com/">Apply now <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="https://wallstalpha.com/webinar123">Free live lecture</a></div>
+<section class="band closing" data-spot><div class="wrap closing-inner" data-rise-group>
+  <div><h2>One shot per cycle. <em>Make it count.</em></h2><p>Apply to the Academy for the full library, the job board and coaching with Chase, or start with the lecture replay.</p></div>
+  <div class="ctas"><a class="btn btn--solid" href="https://wallstalpha.com/" data-magnetic>Apply now <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="replay.html">Watch the replay</a></div>
 </div></section>
 </main>
 <footer>
@@ -141,7 +165,7 @@
     <div class="foot-grid">
       <div><a class="brand" href="./" aria-label="Wall Street Alpha home"><img class="lockup" src="assets/wsa-lockup.png" alt="Wall Street Alpha" width="156" height="48"></a>
         <p>Recruiting coaching and free resources for students breaking into investment banking, markets and the buy side.</p></div>
-      <div class="foot-col"><span class="label">Program</span><a href="https://wallstalpha.com/">Apply now</a><a href="deans-list.html">Dean's List</a></div><div class="foot-col"><span class="label">Free</span><a href="https://wallstalpha.com/webinar123">Live lecture</a><a href="https://wallstalpha.com/technicalguide">Technicals guide</a><a href="resources.html">Resource library</a><a href="jobs.html">Job board</a></div><div class="foot-col"><span class="label">Members</span><a href="https://wallstalpha.com/login">Log in</a><a href="https://wallstalpha.com/dashboard">Student portal</a></div><div class="foot-col"><span class="label">Legal</span><a href="https://wallstalpha.com/terms">Terms of Service</a><a href="https://wallstalpha.com/privacy">Privacy Policy</a><a href="mailto:Chase@wallstalpha.com">Contact</a></div>
+      <div class="foot-col"><span class="label">Program</span><a href="https://wallstalpha.com/">Apply now</a><a href="deans-list.html">Dean's List</a></div><div class="foot-col"><span class="label">Free</span><a href="replay.html">Webinar replay</a><a href="https://wallstalpha.com/webinar123">Live lecture</a><a href="https://wallstalpha.com/technicalguide">Technicals guide</a><a href="resources.html">Resource library</a><a href="jobs.html">Job board</a></div><div class="foot-col"><span class="label">Members</span><a href="https://wallstalpha.com/login">Log in</a><a href="https://wallstalpha.com/dashboard">Student portal</a></div><div class="foot-col"><span class="label">Legal</span><a href="https://wallstalpha.com/terms">Terms of Service</a><a href="https://wallstalpha.com/privacy">Privacy Policy</a><a href="mailto:Chase@wallstalpha.com">Contact</a></div>
     </div>
     <p class="disclaimer">Disclaimer: Wall Street Alpha provides recruiting coaching and preparation. It does not guarantee employment, interviews, or offers. Founder credentials describe prior individual experience and imply no affiliation with or endorsement by any named firm.</p>
     <div class="legal"><span>© 2026 Wall Street Alpha, LLC. All rights reserved.</span><span>Chase@wallstalpha.com</span></div>
@@ -150,5 +174,6 @@
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module" src="assets/bull3d.js"></script>
 <script src="assets/site.js" defer></script>
+<script src="assets/motion.js" defer></script>
 </body>
 </html>

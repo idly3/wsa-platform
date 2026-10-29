@@ -442,6 +442,55 @@
     });
   });
 
+  /* ---------------- webinar replay (replay.html) ---------------- */
+  if (page === "replay") {
+    /* booking links carry what the email link came with, so the application opens pre-filled */
+    var carry = new URLSearchParams();
+    ["name", "first_name", "last_name", "email", "phone", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid"].forEach(function (k) {
+      var v = params.get(k); if (v) carry.set(k, v.slice(0, 200));
+    });
+    if (String(carry)) $$("[data-book]").forEach(function (a) { a.setAttribute("href", a.getAttribute("href").split("?")[0] + "?" + carry); });
+
+    /* sharing sends the bare replay link, never the viewer's own details */
+    var shareUrl = window.location.href.split(/[?#]/)[0];
+    var shareText = "Watch Chase Enloe's Placement Playbook replay: how students break into investment banking and private equity without a target school or connections.";
+    $$("[data-share]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (navigator.share) { navigator.share({ title: "Chase's Placement Playbook: replay", text: shareText, url: shareUrl }).catch(function () {}); return; }
+        var ask = function () { window.prompt("Copy this link to share the replay:", shareUrl); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareUrl).then(function () { toast("Link copied. Send it to a parent or guardian."); }, ask);
+        else ask();
+      });
+    });
+    $$("[data-share-mail]").forEach(function (a) {
+      a.setAttribute("href", "mailto:?subject=" + encodeURIComponent("Watch this with me: Chase's Placement Playbook") + "&body=" + encodeURIComponent(shareText + "\n\n" + shareUrl));
+    });
+
+    /* this cohort's dates: blocks disappear once their date has passed, finished milestones dim */
+    var nowMs = Date.now();
+    $$("[data-until]").forEach(function (el) { if (nowMs > Date.parse(el.getAttribute("data-until"))) el.hidden = true; });
+    $$("[data-date]").forEach(function (el) { el.classList.toggle("is-past", nowMs > Date.parse(el.getAttribute("data-date"))); });
+
+    /* the booking bar slides in once the video has scrolled away, and steps aside for the closing band */
+    var dock = $("[data-dock]"), player = $("[data-player]"), closing = $(".closing");
+    if (dock && player && "IntersectionObserver" in window) {
+      var past = false, atEnd = false;
+      var setDock = function () {
+        var on = past && !atEnd;
+        dock.classList.toggle("on", on);
+        dock.setAttribute("aria-hidden", String(!on));
+        $$("a", dock).forEach(function (a) { a.tabIndex = on ? 0 : -1; });
+      };
+      new IntersectionObserver(function (es) { past = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; setDock(); }).observe(player);
+      if (closing) new IntersectionObserver(function (es) { atEnd = es[0].isIntersecting; setDock(); }).observe(closing);
+    }
+
+    /* if Wistia can't load (blocked or offline), offer the video in a new tab */
+    setTimeout(function () {
+      if (!(window.customElements && customElements.get("wistia-player"))) $$("[data-video-alt]").forEach(function (el) { el.hidden = false; });
+    }, 6000);
+  }
+
   /* ---------------- technicals guide opt-in ---------------- */
   $$("[data-guide-form]").forEach(function (form) {
     var err = $("[data-guide-error]", form);
