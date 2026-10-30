@@ -791,7 +791,7 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
 .res-peek img{display:block;width:100%;height:auto;filter:blur(1.2px)}
 .res-peek::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--paper) 88%)}
 /* course library (Resources page) */
-.courses{border-top:1px solid var(--line)}
+.res-guides{border-top:1px solid var(--line)}
 .courses-head{display:flex;flex-direction:column;gap:24px}
 .courses-head .sub{max-width:64ch}
 .course-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}
@@ -876,7 +876,7 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
   [data-page="home"] .section-head .sub{display:none}
   [data-page="home"] .pillar{padding:20px 18px;gap:10px}
   [data-page="home"] .pillar .widget{display:none}
-  [data-page="home"] .grid-3 .card p{display:none}
+  [data-page="home"] .grid-2 .card p{display:none}
   [data-page="home"] .thread-list > li:nth-child(n+4){display:none}
   [data-page="home"] .community-grid .side{display:none}
   [data-page="home"] .portrait{aspect-ratio:4/3;max-width:none}
@@ -903,9 +903,6 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
 /* ---------- webinar application (apply-webinar.html, apply-webinar.js) ---------- */
 /* one question at a time on the left, the navy panel with the 3D bull on the right; on phones the bull
    moves above the form (apply-webinar.js) and the panel follows the form */
-.aw-help{font-size:13.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
-.aw-help span{color:var(--ink);font-weight:600}
-.aw-help:hover span{color:var(--accent)}
 .aw{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
 .aw.is-booking{grid-template-columns:minmax(0,2.1fr) minmax(0,.9fr)}
 .aw-main{align-items:flex-start;padding-top:clamp(28px,7vh,80px);padding-bottom:clamp(40px,6vw,72px)}
@@ -1003,7 +1000,6 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
   .aw .choice{padding:12px 14px;font-size:15px;min-height:50px}
   .aw-h1{font-size:clamp(32px,9vw,44px)}
   .aw-q{font-size:clamp(24px,6.6vw,30px)}
-  .aw-help span{display:none}
   .aw-reveal{padding:14px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -1127,11 +1123,20 @@ a.chip{display:inline-flex;align-items:center;text-decoration:none}
 .chapters-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,72px);align-items:start}
 .chapters-head{display:flex;flex-direction:column;gap:16px;position:sticky;top:110px}
 .chapters{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.chapters li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding-block:20px;border-bottom:1px solid var(--line)}
+.chapters li{border-bottom:1px solid var(--line)}
+.chapters .chapter{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding-block:20px;color:inherit;text-decoration:none}
 .chapters .n{font-family:var(--mono);font-size:13px;color:var(--faint);padding-top:5px}
 .chapters b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,24px);line-height:1.2;letter-spacing:-.01em}
 .chapters p{color:var(--muted);font-size:15px;margin-top:6px;max-width:58ch}
-.chapters li:hover .n{color:var(--accent)}
+.chapters li:hover .n,.chapters .chapter:hover b{color:var(--accent)}
+.chapters .seek{margin-top:10px}
+/* timestamp links: jump the replay to that moment */
+.seek{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12.5px;font-weight:500;font-style:normal;letter-spacing:.02em;color:var(--accent);text-decoration:none;white-space:nowrap;vertical-align:baseline}
+.seek svg{width:10px;height:10px;flex-shrink:0}
+a.seek:hover,.chapter:hover .seek{text-decoration:underline;text-underline-offset:3px}
+.parents-card .seek,.replay-hero .seek{color:#D2B26B}
+.replay-hero .sub a{color:var(--band-ink);text-decoration:underline;text-decoration-color:rgba(244,246,249,.4);text-underline-offset:3px}
+.replay-hero .sub a:hover{text-decoration-color:var(--band-ink)}
 .story{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(32px,5vw,72px);align-items:center}
 .story-path{display:flex;flex-direction:column;gap:4px;padding:clamp(24px,3vw,36px);border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow-sm)}
 .story-node{display:flex;align-items:center;gap:16px}

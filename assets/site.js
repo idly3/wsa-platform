@@ -466,6 +466,19 @@
       a.setAttribute("href", "mailto:?subject=" + encodeURIComponent("Watch this with me: Chase's Placement Playbook") + "&body=" + encodeURIComponent(shareText + "\n\n" + shareUrl));
     });
 
+    /* timestamp links jump the replay to that moment; if Wistia didn't load they open YouTube at the same time */
+    var replay = $("[data-player] wistia-player");
+    $$("[data-seek]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (!replay || !(window.customElements && customElements.get("wistia-player"))) return;
+        e.preventDefault();
+        $("[data-player]").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        replay.currentTime = +a.getAttribute("data-seek") || 0;
+        replay.muted = false; /* a click allows sound, so skip Wistia's silent autoplay */
+        replay.play();
+      });
+    });
+
     /* this cohort's dates: blocks disappear once their date has passed, finished milestones dim */
     var nowMs = Date.now();
     $$("[data-until]").forEach(function (el) { if (nowMs > Date.parse(el.getAttribute("data-until"))) el.hidden = true; });
