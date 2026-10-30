@@ -259,8 +259,20 @@
   $$("[data-rotator]").forEach(function (r) {
     var items = $$("span", r); if (items.length < 2) return;
     var i = 0; items[0].classList.add("on");
+    /* "fit": the box follows the phrase on show (each phrase measured on its own, without the grid's stretch) */
+    var fit = r.getAttribute("data-rotator") === "fit";
+    var size = function () {
+      if (!fit) return;
+      var probe = items[i].cloneNode(true);
+      probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+      r.parentNode.appendChild(probe);
+      r.style.width = Math.ceil(probe.getBoundingClientRect().width) + "px";
+      probe.remove();
+    };
+    size();
+    if (fit) { window.addEventListener("resize", size); if (document.fonts && document.fonts.ready) document.fonts.ready.then(size); }
     if (reduced) return;
-    setInterval(function () { items[i].classList.remove("on"); i = (i + 1) % items.length; items[i].classList.add("on"); }, 1900);
+    setInterval(function () { items[i].classList.remove("on"); i = (i + 1) % items.length; items[i].classList.add("on"); size(); }, 1900);
   });
 
   /* ---------------- resources library ---------------- */
