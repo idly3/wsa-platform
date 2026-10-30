@@ -1221,3 +1221,33 @@ a.seek:hover,.chapter:hover .seek{text-decoration:underline;text-underline-offse
 }
 @media (max-width:440px){.aw-vsl-h{font-size:27px}}
 @media (prefers-reduced-motion:reduce){.aw-vsl-h .rotator span{transition:none}}
+
+/* ---------- home with the VSL (home-vsl.html) ---------- */
+/* headline and copy beside the video on wide screens; on phones the video sits between the headline and the copy */
+.hero--vsl{padding-top:clamp(28px,4vw,56px)}
+.vsl-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-areas:"head video" "body video";column-gap:clamp(32px,4.5vw,64px);row-gap:24px;align-items:center}
+.vsl-hero > div{position:relative;z-index:1;min-width:0}
+.vsl-hero-head{grid-area:head;align-self:end;display:flex;flex-direction:column;gap:20px}
+.vsl-hero-video{grid-area:video}
+.vsl-hero-body{grid-area:body;align-self:start;display:flex;flex-direction:column;gap:22px}
+.hero--vsl h1{font-size:clamp(36px,4.3vw,58px);line-height:1.06}
+.vsl-frame{border-radius:18px;overflow:hidden;background:#0A1830;box-shadow:var(--shadow);border:1px solid var(--line)}
+.vsl-frame wistia-player{display:block}
+.hero--vsl .bull3d{right:auto;left:-16%;top:46%}
+.gap-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.gap-grid h2 em{color:var(--gold);font-style:italic}
+.gap-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:clamp(20px,2.6vw,32px)}
+.gap-row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;row-gap:2px;padding-block:16px;border-bottom:1px dashed var(--line)}
+.gap-row:first-child{padding-top:0}
+.gap-row span{font-weight:600}
+.gap-row small{color:var(--muted);font-size:13.5px}
+.gap-row b{grid-row:span 2;align-self:center;font-family:var(--display);font-size:clamp(26px,2.8vw,34px);font-weight:600;color:var(--muted);font-variant-numeric:lining-nums}
+.gap-row--elite b{color:var(--ink)}
+.gap-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 16px;padding-top:18px}
+.gap-total span{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.gap-total b{font-family:var(--display);font-size:clamp(34px,4vw,50px);font-weight:600;line-height:1;color:var(--accent);font-variant-numeric:lining-nums tabular-nums}
+@media (max-width:960px){
+  .vsl-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "video" "body"}
+  .hero--vsl .bull3d{left:auto;right:-5%;top:3%}
+  .gap-grid{grid-template-columns:minmax(0,1fr)}
+}

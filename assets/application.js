@@ -516,6 +516,8 @@
   /* a step this page doesn't have (book-call.html shares its progress with apply-webinar.html, which has a welcome screen) */
   if (ids.indexOf(state.step) < 0) state.step = START;
   if (resumed && state.step !== START) $("[data-aw-resume]").hidden = false;
+  /* a link from a page that already played the video (?start=questions) skips the welcome screen */
+  if (params.get("start") === "questions" && state.step === START && questions[0]) state.step = questions[0].getAttribute("data-step");
   /* start over in place, keeping the campaign tags this visit came with */
   $("[data-aw-restart]").addEventListener("click", function () {
     var keep = state;
