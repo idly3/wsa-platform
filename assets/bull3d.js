@@ -1,4 +1,4 @@
-/* 3D bull for the landing page (index.html) and the webinar application (apply-webinar.html).
+/* 3D bull for the landing page (index.html) and the application forms (apply-webinar.html, book-call.html).
    Extrudes the traced logo outline (bull-shape.json, made by .claude/trace_bull.py) into a faint
    watermark behind the hero headline that follows the cursor, touch, scroll and phone tilt.
    CSS sets its opacity and its colour (--bull-tone). data-bull3d="stage" leaves out the scroll effect,

@@ -1,6 +1,8 @@
-/* Wall Street Alpha — the application forms: post-webinar (apply-webinar.html) and the main
-   application with the VSL (apply.html). Each page sets its own Zapier webhook, Calendly event and form
-   name on its [data-aw] element (data-webhook, data-calendly, data-form-name), and keeps its own progress.
+/* Wall Street Alpha — the application forms: post-webinar (apply-webinar.html), the same form without
+   its welcome screen for the replay's booking buttons (book-call.html), and the main application with the
+   VSL (apply.html). Each page sets its own Zapier webhook, Calendly event and form name on its [data-aw]
+   element (data-webhook, data-calendly, data-form-name), and keeps its own progress. A form opens on the
+   first step in its page, whether that's a welcome screen or the first question.
    Youform-style: one question at a time, letter keys pick an answer, Enter moves on. Answers go to the
    Zapier webhook as a flat form post, with the same fields every time:
      partial   once we have contact details, then again after a pause or when the tab is hidden
@@ -54,6 +56,7 @@
   var TOTAL = questions.length;
   var stepEl = function (id) { return form.querySelector('[data-step="' + id + '"]'); };
   var qIndex = function (id) { return questions.indexOf(stepEl(id)); };
+  var START = ids[0];
 
   /* phone country codes: one list in the page, copied to every picker; the default follows the time zone */
   var DIAL = { US: "1", CA: "1", GB: "44", IN: "91", CN: "86", HK: "852", SG: "65", AU: "61", AE: "971", IE: "353", DE: "49", FR: "33", KR: "82", JP: "81", NG: "234", BR: "55", MX: "52" };
@@ -88,7 +91,7 @@
   };
 
   /* ---------------- state (kept in this browser) ---------------- */
-  var blank = function () { return { id: uid(), started_at: now(), updated_at: now(), step: "welcome", reached: 0, answers: {}, status: "", sent: {}, track: {} }; };
+  var blank = function () { return { id: uid(), started_at: now(), updated_at: now(), step: START, reached: 0, answers: {}, status: "", sent: {}, track: {} }; };
   var saved = store.get(KEY);
   var resumed = !!(saved && saved.id && params.get("new") !== "1" && Date.now() - Date.parse(saved.updated_at || 0) < FORGET_AFTER_MS);
   var state = resumed ? saved : blank();
@@ -289,6 +292,7 @@
     var pct = Math.round(done / TOTAL * 100);
     top.hidden = state.step === "welcome";
     nav.hidden = qi < 0;
+    nav.querySelector("[data-aw-back]").hidden = state.step === START;
     $("[data-aw-count]").textContent = book ? (state.status === "booked" ? "Call booked" : "Application complete") : "Question " + (qi + 1) + " of " + TOTAL;
     $("[data-aw-pct-label]").textContent = pct + "%";
     bar.style.width = pct + "%";
@@ -509,7 +513,9 @@
     if (!a.parent_phone_cc) a.parent_phone_cc = a.phone_cc;
   })();
   write(state.answers);
-  if (resumed && state.step !== "welcome") $("[data-aw-resume]").hidden = false;
+  /* a step this page doesn't have (book-call.html shares its progress with apply-webinar.html, which has a welcome screen) */
+  if (ids.indexOf(state.step) < 0) state.step = START;
+  if (resumed && state.step !== START) $("[data-aw-resume]").hidden = false;
   /* start over in place, keeping the campaign tags this visit came with */
   $("[data-aw-restart]").addEventListener("click", function () {
     var keep = state;
@@ -519,10 +525,10 @@
     $("[data-aw-resume]").hidden = true;
     $("[data-book-head]").hidden = false; $("[data-book-back]").hidden = false; $("[data-booked]").hidden = true;
     calBox.hidden = false; $("[data-aw-cal-alt]").hidden = false; calShown = "";
-    show("welcome", 0);
-    $("#aw-h-welcome").focus();
+    show(START, 0);
+    stepEl(START).querySelector("[tabindex='-1']").focus();
   });
-  show(ids.indexOf(state.step) >= 0 ? state.step : "welcome", 0);
+  show(state.step, 0);
 
   /* ---------------- test mode (?test=1) ---------------- */
   if (state.test) {
